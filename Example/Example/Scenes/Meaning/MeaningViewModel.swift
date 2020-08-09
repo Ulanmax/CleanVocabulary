@@ -12,6 +12,7 @@ import RxCocoa
 
 final class MeaningViewModel: ViewModelType {
     
+    private let word: String
     private let meaning: MeaningModel
     
     struct Input {
@@ -19,16 +20,19 @@ final class MeaningViewModel: ViewModelType {
     }
     struct Output {
         let fetching: Driver<Bool>
-        let title: Driver<String>
+        let word: Driver<String>
+        let translation: Driver<String>
+        let imageUrl: Driver<URL?>
         let error: Driver<Error>
     }
     
     private let useCase: VocabularyNetwork
     private let navigator: MeaningNavigator
     
-    init(useCase: VocabularyNetwork, navigator: MeaningNavigator, meaning: MeaningModel) {
+    init(useCase: VocabularyNetwork, navigator: MeaningNavigator, word: String, meaning: MeaningModel) {
         self.useCase = useCase
         self.navigator = navigator
+        self.word = word
         self.meaning = meaning
     }
     
@@ -39,10 +43,18 @@ final class MeaningViewModel: ViewModelType {
         let fetching = activityIndicator.asDriver()
         let errors = errorTracker.asDriver()
         
-        let title = Driver.just(self.meaning).startWith(self.meaning).map {$0.translation.text}
+        let word = Driver.just(self.word).startWith(self.word)
+        
+        let translation = Driver.just(self.meaning).startWith(self.meaning).map {$0.translation.text}
+        
+        let imageUrl = Driver.just(self.meaning).startWith(self.meaning).map {
+            $0.imageUrl
+        }
         
         return Output(fetching: fetching,
-                      title: title,
+                      word: word,
+                      translation: translation,
+                      imageUrl: imageUrl,
                       error: errors)
     }
 }

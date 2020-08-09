@@ -9,10 +9,13 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Nuke
 
 class MeaningViewController: UIViewController {
     
-//    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var imageViewWord: UIImageView!
+    @IBOutlet weak var labelWord: UILabel!
+    @IBOutlet weak var labelTranslation: UILabel!
     
     private let disposeBag = DisposeBag()
     
@@ -26,6 +29,7 @@ class MeaningViewController: UIViewController {
     }
     
     private func configureUI() {
+
     }
     
     private func bindViewModel() {
@@ -42,19 +46,23 @@ class MeaningViewController: UIViewController {
         let output = viewModel.transform(input: input)
         
         [
-            output.title.drive(onNext: { [weak self] (value) in
-//                self?.labelTitle.text = value
+            output.word.drive(onNext: { [weak self] (value) in
+                self?.labelWord.text = value
+            }),
+            output.translation.drive(onNext: { [weak self] (value) in
+                self?.labelTranslation.text = value
+            }),
+            output.imageUrl.drive(onNext: { [weak self] (value) in
+                guard let imageView = self?.imageViewWord, let url = value, let options = self?.makeImageLoadingOptions() else {return}
+                Nuke.loadImage(with: url, options: options, into: imageView)
             }),
             output.error.drive(errorBinding)
         ]
         .forEach({$0.disposed(by: disposeBag)})
-        
     }
     
-    var favContentBinding: Binder<String> {
-        return Binder(self, binding: { (vc, title) in
-            print(title)
-        })
+    func makeImageLoadingOptions() -> ImageLoadingOptions {
+        return ImageLoadingOptions(placeholder:UIImage(named: "photo"), transition: .fadeIn(duration: 0.25))
     }
 }
 

@@ -45,8 +45,9 @@ final class MainViewModel: ViewModelType {
                         .trackActivity(activityIndicator)
                         .trackError(errorTracker)
                         .asDriverOnErrorJustComplete()
-                }.map {
-                    $0.first?.meanings.map { MeaningCellModel(with: $0) } ?? []
+                }.map { words -> [MeaningCellModel] in
+                    guard let wordModel = words.first else { return [] }
+                    return wordModel.meanings.map { MeaningCellModel(with: $0, word: wordModel.text) }
                 }
         
         let selectedMeaning = input.selection.withLatestFrom(meanings) { (indexPath, meanings) -> MeaningCellModel in
@@ -54,8 +55,8 @@ final class MainViewModel: ViewModelType {
             }
         .do(onNext:
             { [weak self] (cellModel) in
-                if let meaning = cellModel.meaning {
-                    self?.navigator.toMeaningDetails(meaning)
+                if let meaning = cellModel.meaning, let word = cellModel.word {
+                    self?.navigator.toMeaningDetails(word, meaning: meaning)
                 }
             }
         ).mapToVoid()

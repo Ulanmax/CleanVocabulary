@@ -20,9 +20,6 @@ PODS:
     - Differentiator (~> 4.0)
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
-  - RxNuke (1.0.1):
-    - Nuke (~> 9.0)
-    - RxSwift (~> 5.1.0)
   - RxOptional (4.1.0):
     - RxCocoa (~> 5)
     - RxSwift (~> 5)
@@ -34,12 +31,12 @@ DEPENDENCIES:
   - Alamofire
   - CocoaLumberjack/Swift
   - IQKeyboardManagerSwift
+  - Nuke
   - PKHUD (~> 5.0)
   - QueryKit
   - RxAlamofire
   - RxCocoa
   - RxDataSources
-  - RxNuke
   - RxOptional
   - RxSwift (~> 5.1.0)
 
@@ -55,7 +52,6 @@ SPEC REPOS:
     - RxAlamofire
     - RxCocoa
     - RxDataSources
-    - RxNuke
     - RxOptional
     - RxRelay
     - RxSwift
@@ -71,11 +67,10 @@ SPEC CHECKSUMS:
   RxAlamofire: 878eb06baefd76df6062889be11592434e6c4a95
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
-  RxNuke: 10314eff18b5e7cf961298b265507deafcdcdef3
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: cb31217b49f73ef9fe1358a2124d7fd51c4a8495
+PODFILE CHECKSUM: 9e535231efd58da63dcec947c5c1e45bd89b9a1a
 
 COCOAPODS: 1.9.2

@@ -10,7 +10,6 @@ end
 def rx_cocoa
   pod 'RxCocoa'
   pod 'RxDataSources'
-  pod 'RxNuke'
 end
 
 
@@ -28,6 +27,7 @@ target 'Example' do
     pod 'QueryKit'
     pod 'IQKeyboardManagerSwift'
     pod 'PKHUD', '~> 5.0'
+    pod 'Nuke'
 
   target 'ExampleTests' do
     inherit! :search_paths

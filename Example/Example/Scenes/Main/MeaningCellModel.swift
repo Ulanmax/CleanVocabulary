@@ -15,13 +15,16 @@ class MeaningCellModel {
     
     var note: String = ""
     
-    var meaning: MeaningModel?
+    var word: String?
     
-    init(with meaning: MeaningModel) {
-        self.update(with: meaning)
+    weak var meaning: MeaningModel?
+    
+    init(with meaning: MeaningModel, word: String) {
+        self.update(with: meaning, word: word)
     }
     
-    func update(with meaning: MeaningModel) {
+    func update(with meaning: MeaningModel, word: String) {
+        self.word = word
         self.meaning = meaning
         self.text = meaning.translation.text
         self.note = meaning.translation.note ?? "˜˜"

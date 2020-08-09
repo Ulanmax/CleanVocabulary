@@ -14,14 +14,14 @@ public class MeaningModel: Codable {
     public let partOfSpeechCode: String
     public let translation: TranslationModel
     public let previewUrl: String
-    public let imageUrl: String
+    public let imageUrl: URL?
     
     public init(
         id: Int,
         partOfSpeechCode: String,
         translation: TranslationModel,
         previewUrl: String,
-        imageUrl: String
+        imageUrl: URL?
         ) {
         self.id = id
         self.partOfSpeechCode = partOfSpeechCode
@@ -45,6 +45,8 @@ public class MeaningModel: Codable {
         partOfSpeechCode = try container.decode(String.self, forKey: .partOfSpeechCode)
         translation = try container.decode(TranslationModel.self, forKey: .translation)
         previewUrl = try container.decode(String.self, forKey: .previewUrl)
-        imageUrl = try container.decode(String.self, forKey: .imageUrl)
+        let urlString = try? container.decode(String.self, forKey: .imageUrl)
+        let url = urlString?.replacingOccurrences(of: "//", with: "https://") ?? ""
+        imageUrl = URL(string: url)
     }
 }
