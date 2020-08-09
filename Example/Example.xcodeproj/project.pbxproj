@@ -34,6 +34,9 @@
 		004D5F4B24DF18DE006BD9CA /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D5F4A24DF18DE006BD9CA /* WordModel.swift */; };
 		004D5F4D24DF18F4006BD9CA /* MeaningModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D5F4C24DF18F4006BD9CA /* MeaningModel.swift */; };
 		004D5F4F24DF1CEC006BD9CA /* TranslationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D5F4E24DF1CEC006BD9CA /* TranslationModel.swift */; };
+		004D5F5124DFD15B006BD9CA /* MeaningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D5F5024DFD15B006BD9CA /* MeaningCell.swift */; };
+		004D5F5324DFD165006BD9CA /* MeaningCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D5F5224DFD165006BD9CA /* MeaningCellModel.swift */; };
+		004D5F5524DFD18E006BD9CA /* MeaningCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004D5F5424DFD18E006BD9CA /* MeaningCell.xib */; };
 		C7BC252BAA441B889DE4DE98 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23974B8FC56710C2713F229D /* Pods_Example.framework */; };
 		F84A3063DEEBF28288D8A5F9 /* Pods_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0DF0EEC1FAACFD6CAAEBCF0 /* Pods_ExampleTests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +83,9 @@
 		004D5F4A24DF18DE006BD9CA /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
 		004D5F4C24DF18F4006BD9CA /* MeaningModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeaningModel.swift; sourceTree = "<group>"; };
 		004D5F4E24DF1CEC006BD9CA /* TranslationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationModel.swift; sourceTree = "<group>"; };
+		004D5F5024DFD15B006BD9CA /* MeaningCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeaningCell.swift; sourceTree = "<group>"; };
+		004D5F5224DFD165006BD9CA /* MeaningCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeaningCellModel.swift; sourceTree = "<group>"; };
+		004D5F5424DFD18E006BD9CA /* MeaningCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeaningCell.xib; sourceTree = "<group>"; };
 		16E3E97CC0C40C1B20E195B5 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		23974B8FC56710C2713F229D /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		411B55BB7D96C0E39981A561 /* Pods-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-ExampleTests/Pods-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +221,9 @@
 				004D5F4424DF1085006BD9CA /* MainNavigator.swift */,
 				004D5F4624DF108D006BD9CA /* MainViewController.swift */,
 				004D5F4824DF1095006BD9CA /* MainViewModel.swift */,
+				004D5F5024DFD15B006BD9CA /* MeaningCell.swift */,
+				004D5F5224DFD165006BD9CA /* MeaningCellModel.swift */,
+				004D5F5424DFD18E006BD9CA /* MeaningCell.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -326,6 +335,7 @@
 				004D5F0224DF0C85006BD9CA /* LaunchScreen.storyboard in Resources */,
 				004D5EFF24DF0C85006BD9CA /* Assets.xcassets in Resources */,
 				004D5EFD24DF0C83006BD9CA /* Main.storyboard in Resources */,
+				004D5F5524DFD18E006BD9CA /* MeaningCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +419,9 @@
 			files = (
 				004D5F2824DF0EAF006BD9CA /* Reusable.swift in Sources */,
 				004D5F1824DF0D83006BD9CA /* Application.swift in Sources */,
+				004D5F5324DFD165006BD9CA /* MeaningCellModel.swift in Sources */,
 				004D5F4F24DF1CEC006BD9CA /* TranslationModel.swift in Sources */,
+				004D5F5124DFD15B006BD9CA /* MeaningCell.swift in Sources */,
 				004D5F3D24DF0FE7006BD9CA /* Network.swift in Sources */,
 				004D5F2C24DF0EAF006BD9CA /* UIViewController+Ext.swift in Sources */,
 				004D5F2624DF0EAF006BD9CA /* Array+Ext.swift in Sources */,

@@ -14,17 +14,21 @@ final class MainViewModel: ViewModelType {
     
     struct Input {
         let trigger: Driver<Void>
+        let searchTrigger: Driver<String>
+        let selection: Driver<IndexPath>
     }
     struct Output {
         let fetching: Driver<Bool>
+        let meanings: Driver<[MeaningCellModel]>
+        let selectedMeaning: Driver<Void>
         let error: Driver<Error>
     }
     
-    private let network: VocabularyNetwork
+    private let useCase: VocabularyNetwork
     private let navigator: MainNavigator
     
-    init(network: VocabularyNetwork, navigator: MainNavigator) {
-        self.network = network
+    init(useCase: VocabularyNetwork, navigator: MainNavigator) {
+        self.useCase = useCase
         self.navigator = navigator
     }
     
@@ -35,47 +39,30 @@ final class MainViewModel: ViewModelType {
         let fetching = activityIndicator.asDriver()
         let errors = errorTracker.asDriver()
         
-//        let notes = input.trigger.flatMapLatest {
-//            return self.repo.fetchItems()
-//                .trackError(errorTracker)
-//                .asDriverOnErrorJustComplete()
-//        }
-//
-//        let lastNote = notes.map { value -> String in
-//            if let lastNote = value.last {
-//                return lastNote.body
-//            }
-//            return ""
-//        }
-//
-//        let weather = input.cityTrigger.flatMapLatest { city -> SharedSequence<DriverSharingStrategy, WeatherModel> in
-//            return self.network.fetchWeather(city: city)
-//                        .trackActivity(activityIndicator)
-//                        .trackError(errorTracker)
-//                        .asDriverOnErrorJustComplete()
-//                }
-//
-//        let temperature = weather.map { value -> String in
-//            return "\(value.main.temp)°"
-//        }
-//
-//        let weatherDescription = weather.map { value -> String in
-//            if let weatherDescr = value.weather.first {
-//                return weatherDescr.main
-//            }
-//            return ""
-//        }
-//
-//        let recommendation = weather.map { value -> String in
-//            return WeatherTypes.determineType(for: value.main.temp)
-//        }
-//
-//        let addNote = input.addNoteTrigger
-//        .do(onNext: navigator.toAddNote)
+        let meanings = Driver.combineLatest(input.searchTrigger, input.trigger).flatMapLatest { value -> SharedSequence<DriverSharingStrategy, [WordModel]> in
+            // I haven't added pagination here
+            return self.useCase.searchWords(search: value.0, page: 1, pageSize: 1)
+                        .trackActivity(activityIndicator)
+                        .trackError(errorTracker)
+                        .asDriverOnErrorJustComplete()
+                }.map {
+                    $0.first?.meanings.map { MeaningCellModel(with: $0) } ?? []
+                }
         
-        return Output(
-            fetching: fetching,
-            error: errors
-        )
+        let selectedMeaning = input.selection.withLatestFrom(meanings) { (indexPath, meanings) -> MeaningCellModel in
+                return meanings[indexPath.row]
+            }
+        .do(onNext:
+            { [weak self] (cellModel) in
+                if let meaning = cellModel.meaning {
+                    self?.navigator.toMeaningDetails(meaning)
+                }
+            }
+        ).mapToVoid()
+        
+        return Output(fetching: fetching,
+                      meanings: meanings,
+                      selectedMeaning: selectedMeaning,
+                      error: errors)
     }
 }

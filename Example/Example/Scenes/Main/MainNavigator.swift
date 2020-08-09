@@ -25,20 +25,16 @@ class MainNavigator {
     
     func toMain() {
         let vc = storyBoard.instantiateViewController(ofType: MainViewController.self)
-        vc.viewModel = MainViewModel(network: network.makeVocabularyNetwork(),
+        vc.viewModel = MainViewModel(useCase: network.makeVocabularyNetwork(),
                                         navigator: self)
         navigationController.pushViewController(vc, animated: true)
     }
 
-    func toAddNote() {
-//        let storyboard = UIStoryboard(name: "AddNote", bundle: nil)
-//        let navigator = AddNoteNavigator(navigationController: navigationController)
-//        let viewModel = AddNoteViewModel(repo: repo.makeNotesRepository(), navigator: navigator)
-//        let vc = storyboard.instantiateViewController(ofType: AddNoteViewController.self)
+    func toMeaningDetails(_ meaning: MeaningModel) {
+//        let viewModel = MeaningDetailsViewModel(useCase: services.make(), navigator: self, meaning: meaning)
+//        let vc = storyBoard.instantiateViewController(ofType: MeaningDetailsViewController.self)
 //        vc.viewModel = viewModel
-//        let nc = UINavigationController(rootViewController: vc)
-//        navigationController.present(nc, animated: true, completion: nil)
-
+//        navigationController.pushViewController(vc, animated: true)
     }
     
 }

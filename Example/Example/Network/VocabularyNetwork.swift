@@ -11,7 +11,7 @@ import RxSwift
 public final class VocabularyNetwork {
     private let network: Network<WordModel>
 
-    private let path = "weather"
+    private let path = "words/search"
 
     init(network: Network<WordModel>) {
         self.network = network

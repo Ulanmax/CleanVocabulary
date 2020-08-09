@@ -11,7 +11,7 @@ import Foundation
 public class TranslationModel: Codable {
     
     public let text: String
-    public let note: String
+    public let note: String?
     
     public init(
         text: String,
@@ -30,6 +30,6 @@ public class TranslationModel: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         text = try container.decode(String.self, forKey: .text)
-        note = try container.decode(String.self, forKey: .note)
+        note = try? container.decode(String.self, forKey: .note)
     }
 }
