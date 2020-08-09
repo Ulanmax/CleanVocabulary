@@ -31,10 +31,12 @@ class MainNavigator {
     }
 
     func toMeaningDetails(_ meaning: MeaningModel) {
-//        let viewModel = MeaningDetailsViewModel(useCase: services.make(), navigator: self, meaning: meaning)
-//        let vc = storyBoard.instantiateViewController(ofType: MeaningDetailsViewController.self)
-//        vc.viewModel = viewModel
-//        navigationController.pushViewController(vc, animated: true)
+        let storyboard = UIStoryboard(name: "Meaning", bundle: nil)
+        let navigator = MeaningNavigator(network: network, navigationController: navigationController, storyBoard: storyboard)
+        let vc = storyboard.instantiateViewController(ofType: MeaningViewController.self)
+        let viewModel = MeaningViewModel(useCase: network.makeVocabularyNetwork(), navigator: navigator, meaning: meaning)
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
     }
     
 }
