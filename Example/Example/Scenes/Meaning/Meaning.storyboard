@@ -28,7 +28,7 @@
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.75" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7yP-uW-fQ3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="7yP-uW-fQ3">
                                 <rect key="frame" x="16" y="60" width="382" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="UJX-FU-dae"/>
@@ -39,12 +39,13 @@
                         <constraints>
                             <constraint firstItem="d9f-LR-6Sr" firstAttribute="top" secondItem="7yP-uW-fQ3" secondAttribute="bottom" constant="16" id="CRb-Ip-l76"/>
                             <constraint firstItem="Mnf-id-sdx" firstAttribute="trailing" secondItem="d9f-LR-6Sr" secondAttribute="trailing" constant="16" id="Cg1-0a-3MY"/>
+                            <constraint firstItem="7yP-uW-fQ3" firstAttribute="leading" secondItem="Mnf-id-sdx" secondAttribute="leading" constant="16" id="E4G-bK-VRw"/>
+                            <constraint firstItem="7yP-uW-fQ3" firstAttribute="centerX" secondItem="IJc-7o-ER3" secondAttribute="centerX" id="Fzz-15-Uyl"/>
                             <constraint firstItem="7yP-uW-fQ3" firstAttribute="top" secondItem="Mnf-id-sdx" secondAttribute="top" constant="16" id="KMi-hL-ENk"/>
                             <constraint firstItem="Mnf-id-sdx" firstAttribute="trailing" secondItem="xmn-v2-94Y" secondAttribute="trailing" constant="16" id="XFe-3G-2eO"/>
                             <constraint firstItem="xmn-v2-94Y" firstAttribute="leading" secondItem="Mnf-id-sdx" secondAttribute="leading" constant="16" id="g3h-h4-5cz"/>
                             <constraint firstItem="d9f-LR-6Sr" firstAttribute="leading" secondItem="Mnf-id-sdx" secondAttribute="leading" constant="16" id="gdv-p2-SXl"/>
-                            <constraint firstItem="Mnf-id-sdx" firstAttribute="trailing" secondItem="7yP-uW-fQ3" secondAttribute="trailing" constant="16" id="oa7-vf-cIl"/>
-                            <constraint firstItem="7yP-uW-fQ3" firstAttribute="leading" secondItem="Mnf-id-sdx" secondAttribute="leading" constant="16" id="rWT-AM-amF"/>
+                            <constraint firstItem="Mnf-id-sdx" firstAttribute="trailing" secondItem="7yP-uW-fQ3" secondAttribute="trailing" constant="16" id="hO3-Gw-cZi"/>
                             <constraint firstItem="xmn-v2-94Y" firstAttribute="top" secondItem="d9f-LR-6Sr" secondAttribute="bottom" constant="16" id="y3j-ud-fFs"/>
                             <constraint firstItem="Mnf-id-sdx" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xmn-v2-94Y" secondAttribute="bottom" constant="16" id="yn3-Zg-Bbk"/>
                         </constraints>
@@ -61,4 +62,7 @@
             <point key="canvasLocation" x="88" y="92"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo" width="169" height="165"/>
+    </resources>
 </document>
