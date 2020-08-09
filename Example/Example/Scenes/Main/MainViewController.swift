@@ -26,6 +26,11 @@ class MainViewController: UIViewController {
         bindViewModel()
     }
     
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+    }
+    
     private func configureUI() {
         
         tableView.register(UINib(nibName: "MeaningCell", bundle: nil), forCellReuseIdentifier: "MeaningCell")
@@ -40,7 +45,7 @@ class MainViewController: UIViewController {
             return
         }
         
-        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+        let viewDidAppear = rx.sentMessage(#selector(UIViewController.viewDidAppear(_:)))
         .mapToVoid()
         .asDriverOnErrorJustComplete()
         
@@ -50,7 +55,7 @@ class MainViewController: UIViewController {
             .asDriver(onErrorJustReturn: "")
         
         let input = MainViewModel.Input(
-            trigger: viewWillAppear,
+            trigger: viewDidAppear,
             searchTrigger: searchTrigger,
             selection: tableView.rx.itemSelected.asDriver()
         )

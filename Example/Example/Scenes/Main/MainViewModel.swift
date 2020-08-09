@@ -39,9 +39,10 @@ final class MainViewModel: ViewModelType {
         let fetching = activityIndicator.asDriver()
         let errors = errorTracker.asDriver()
         
-        let meanings = Driver.combineLatest(input.searchTrigger, input.trigger).flatMapLatest { value -> SharedSequence<DriverSharingStrategy, [WordModel]> in
+        let meanings = input.searchTrigger.withLatestFrom(input.trigger) { value, _ in return value }
+            .flatMapLatest { value -> SharedSequence<DriverSharingStrategy, [WordModel]> in
             // I haven't added pagination here
-            return self.useCase.searchWords(search: value.0, page: 1, pageSize: 1)
+                return self.useCase.searchWords(search: value, page: 1, pageSize: 1)
                         .trackActivity(activityIndicator)
                         .trackError(errorTracker)
                         .asDriverOnErrorJustComplete()

@@ -36,7 +36,7 @@ class MeaningViewController: UIViewController {
         guard let viewModel = self.viewModel else {
             return
         }
-        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear))
             .mapToVoid()
             .asDriverOnErrorJustComplete()
         

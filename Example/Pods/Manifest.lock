@@ -4,10 +4,8 @@ PODS:
   - CocoaLumberjack/Swift (3.6.1):
     - CocoaLumberjack/Core
   - Differentiator (4.0.1)
-  - IQKeyboardManagerSwift (6.5.5)
   - Nuke (9.0.0)
   - PKHUD (5.3.0)
-  - QueryKit (0.14.1)
   - RxAlamofire (5.2.0):
     - RxAlamofire/Core (= 5.2.0)
   - RxAlamofire/Core (5.2.0):
@@ -30,10 +28,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - CocoaLumberjack/Swift
-  - IQKeyboardManagerSwift
   - Nuke
   - PKHUD (~> 5.0)
-  - QueryKit
   - RxAlamofire
   - RxCocoa
   - RxDataSources
@@ -45,10 +41,8 @@ SPEC REPOS:
     - Alamofire
     - CocoaLumberjack
     - Differentiator
-    - IQKeyboardManagerSwift
     - Nuke
     - PKHUD
-    - QueryKit
     - RxAlamofire
     - RxCocoa
     - RxDataSources
@@ -60,10 +54,8 @@ SPEC CHECKSUMS:
   Alamofire: c1ca147559e730bfb2182c8c7aafbdd90a867987
   CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   Nuke: 4390bfb0fcde6aecf314f854439d03914ee7c604
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
-  QueryKit: 60dae8ff75d5805f9c703c68c0ef4294c9dd7de6
   RxAlamofire: 878eb06baefd76df6062889be11592434e6c4a95
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
@@ -71,6 +63,6 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 9e535231efd58da63dcec947c5c1e45bd89b9a1a
+PODFILE CHECKSUM: 1b2c3d1741336dada3dba208685eebb83ceb9ef5
 
 COCOAPODS: 1.9.2

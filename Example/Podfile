@@ -24,8 +24,6 @@ target 'Example' do
     rx_cocoa
     rx_swift
     cocoaLumberjack
-    pod 'QueryKit'
-    pod 'IQKeyboardManagerSwift'
     pod 'PKHUD', '~> 5.0'
     pod 'Nuke'
 
