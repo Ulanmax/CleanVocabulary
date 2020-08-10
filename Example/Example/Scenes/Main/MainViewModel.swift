@@ -24,10 +24,10 @@ final class MainViewModel: ViewModelType {
         let error: Driver<Error>
     }
     
-    private let useCase: VocabularyNetwork
-    private let navigator: MainNavigator
+    private let useCase: VocabularyNetworkProtocol
+    private let navigator: MainNavigatorProtocol
     
-    init(useCase: VocabularyNetwork, navigator: MainNavigator) {
+    init(useCase: VocabularyNetworkProtocol, navigator: MainNavigatorProtocol) {
         self.useCase = useCase
         self.navigator = navigator
     }

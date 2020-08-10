@@ -8,7 +8,11 @@
 
 import RxSwift
 
-public final class VocabularyNetwork {
+protocol VocabularyNetworkProtocol : class {
+    func searchWords(search: String, page: Int, pageSize: Int) -> Observable<[WordModel]>
+}
+
+public final class VocabularyNetwork: VocabularyNetworkProtocol {
     private let network: Network<WordModel>
 
     private let path = "words/search"

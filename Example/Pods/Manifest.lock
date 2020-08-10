@@ -11,6 +11,8 @@ PODS:
   - RxAlamofire/Core (5.2.0):
     - Alamofire (~> 5.1)
     - RxSwift (~> 5.1)
+  - RxBlocking (5.1.1):
+    - RxSwift (~> 5)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -24,6 +26,8 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - RxTest (5.1.1):
+    - RxSwift (~> 5)
 
 DEPENDENCIES:
   - Alamofire
@@ -31,10 +35,12 @@ DEPENDENCIES:
   - Nuke
   - PKHUD (~> 5.0)
   - RxAlamofire
+  - RxBlocking
   - RxCocoa
   - RxDataSources
   - RxOptional
   - RxSwift (~> 5.1.0)
+  - RxTest
 
 SPEC REPOS:
   trunk:
@@ -44,11 +50,13 @@ SPEC REPOS:
     - Nuke
     - PKHUD
     - RxAlamofire
+    - RxBlocking
     - RxCocoa
     - RxDataSources
     - RxOptional
     - RxRelay
     - RxSwift
+    - RxTest
 
 SPEC CHECKSUMS:
   Alamofire: c1ca147559e730bfb2182c8c7aafbdd90a867987
@@ -57,12 +65,14 @@ SPEC CHECKSUMS:
   Nuke: 4390bfb0fcde6aecf314f854439d03914ee7c604
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   RxAlamofire: 878eb06baefd76df6062889be11592434e6c4a95
+  RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
 
-PODFILE CHECKSUM: 1b2c3d1741336dada3dba208685eebb83ceb9ef5
+PODFILE CHECKSUM: 1a1d03918a7957cf93d2cd2d2c2d4f24b875aa02
 
 COCOAPODS: 1.9.2

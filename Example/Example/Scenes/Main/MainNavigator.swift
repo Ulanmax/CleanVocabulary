@@ -9,7 +9,12 @@
 import UIKit
 import RxSwift
 
-class MainNavigator {
+protocol MainNavigatorProtocol {
+    func toMain()
+    func toMeaningDetails(_ word: String, meaning: MeaningModel)
+}
+
+class MainNavigator: MainNavigatorProtocol {
     
     let storyBoard: UIStoryboard
     let navigationController: UINavigationController

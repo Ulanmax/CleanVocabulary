@@ -23,7 +23,6 @@
 		004D5F2E24DF0EAF006BD9CA /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D5F2224DF0EAE006BD9CA /* ErrorTracker.swift */; };
 		004D5F3024DF0EAF006BD9CA /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D5F2424DF0EAF006BD9CA /* ActivityIndicator.swift */; };
 		004D5F3924DF0F36006BD9CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D5F3624DF0F36006BD9CA /* Constants.swift */; };
-		004D5F3A24DF0F36006BD9CA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D5F3724DF0F36006BD9CA /* CustomButton.swift */; };
 		004D5F3B24DF0F36006BD9CA /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D5F3824DF0F36006BD9CA /* ViewModelType.swift */; };
 		004D5F3D24DF0FE7006BD9CA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D5F3C24DF0FE7006BD9CA /* Network.swift */; };
 		004D5F4024DF1000006BD9CA /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D5F3F24DF1000006BD9CA /* NetworkProvider.swift */; };
@@ -76,7 +75,6 @@
 		004D5F2224DF0EAE006BD9CA /* ErrorTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
 		004D5F2424DF0EAF006BD9CA /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		004D5F3624DF0F36006BD9CA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		004D5F3724DF0F36006BD9CA /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		004D5F3824DF0F36006BD9CA /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		004D5F3C24DF0FE7006BD9CA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		004D5F3F24DF1000006BD9CA /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				004D5F3624DF0F36006BD9CA /* Constants.swift */,
-				004D5F3724DF0F36006BD9CA /* CustomButton.swift */,
 				004D5F3824DF0F36006BD9CA /* ViewModelType.swift */,
 			);
 			path = Common;
@@ -298,6 +295,7 @@
 				004D5F0424DF0C85006BD9CA /* Sources */,
 				004D5F0524DF0C85006BD9CA /* Frameworks */,
 				004D5F0624DF0C85006BD9CA /* Resources */,
+				90629431E7B5522B004F7377 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -409,6 +407,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		90629431E7B5522B004F7377 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExampleTests/Pods-ExampleTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExampleTests/Pods-ExampleTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ExampleTests/Pods-ExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FC05C46E76C1B2A075DFA3E6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -448,7 +463,6 @@
 				004D5F2C24DF0EAF006BD9CA /* UIViewController+Ext.swift in Sources */,
 				004D5F6024DFE4AA006BD9CA /* MeaningViewModel.swift in Sources */,
 				004D5F2624DF0EAF006BD9CA /* Array+Ext.swift in Sources */,
-				004D5F3A24DF0F36006BD9CA /* CustomButton.swift in Sources */,
 				004D5F4224DF101C006BD9CA /* VocabularyNetwork.swift in Sources */,
 				004D5F3024DF0EAF006BD9CA /* ActivityIndicator.swift in Sources */,
 				004D5F2924DF0EAF006BD9CA /* RunLoopThreadScheduler.swift in Sources */,

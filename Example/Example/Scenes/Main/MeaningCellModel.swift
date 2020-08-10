@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MeaningCellModel {
+class MeaningCellModel: Equatable {
     
     var text: String = ""
     
@@ -30,5 +30,8 @@ class MeaningCellModel {
         self.note = meaning.translation.note ?? "˜˜"
     }
     
+    static func == (lhs: MeaningCellModel, rhs: MeaningCellModel) -> Bool {
+        return lhs.text == rhs.text && lhs.note == rhs.note
+    }
     
 }

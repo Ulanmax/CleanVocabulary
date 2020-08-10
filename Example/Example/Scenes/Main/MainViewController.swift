@@ -71,10 +71,4 @@ class MainViewController: UIViewController {
         .forEach({$0.disposed(by: disposeBag)})
         
     }
-        
-    var favContentBinding: Binder<String> {
-        return Binder(self, binding: { (vc, title) in
-            print(title)
-        })
-    }
 }
